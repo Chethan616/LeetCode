@@ -3,7 +3,7 @@ class Solution {
         int left = 0;
         int right = 0;
         double currentSum = 0;
-        double maxSum = -Double.MAX_VALUE; // Handles negative numbers correctly
+        double maxSum = -Double.MAX_VALUE;
 
         while (right < nums.length) {
             // Expand the window by adding the right element
