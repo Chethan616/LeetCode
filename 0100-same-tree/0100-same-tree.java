@@ -15,14 +15,29 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        List<Integer> list1 = new ArrayList<>();
-        List<Integer> list2 = new ArrayList<>();
-        parse(p,list1);
-        parse(q,list2);
-        if(list1.equals(list2)){
+        // List<Integer> list1 = new ArrayList<>();
+        // List<Integer> list2 = new ArrayList<>();
+        // parse(p,list1);
+        // parse(q,list2);
+        // if(list1.equals(list2)){
+        //     return true;
+        // }
+        // return false;
+        if (p == null && q == null){
             return true;
         }
-        return false;
+        if(p == null && q != null){
+            return false;
+        }
+        if(p!= null && q == null){
+            return false;
+        }if(p.val != q.val){
+            return false;
+        }
+        if(p==q){
+            return true;
+        }
+        return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
     }
 
     public void parse(TreeNode root, List<Integer> result){
