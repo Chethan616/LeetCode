@@ -8,17 +8,14 @@ class Solution {
     }
 
     public void levelOrder(TreeNode root, int level, List<List<Integer>> result) {
-        if (root == null) {
+        if(root == null){
             return;
         }
-
-        if (result.size() == level) {
+        if(result.size() == level){
             result.add(new ArrayList<>());
         }
-
         result.get(level).add(root.val);
-
-        levelOrder(root.left, level + 1, result);
-        levelOrder(root.right, level + 1, result);
+        levelOrder(root.left, level+1,result);
+        levelOrder(root.right, level+1,result);   
     }
 }
